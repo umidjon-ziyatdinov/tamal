@@ -1,0 +1,35 @@
+# Node modules
+/node_modules
+
+# Build output
+/.next
+/out
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Test coverage
+/coverage
+
+# Next.js specific
+.next/
+# .env files should not be committed (for sensitive keys)
+.env*
+!env.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor-specific files
+/.vscode/
+/.idea/
+
+# Misc
+*.log

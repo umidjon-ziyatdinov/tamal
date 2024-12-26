@@ -1,0 +1,22 @@
+.manufacturer-slider .swiper-button-prev::after,
+.manufacturer-slider .swiper-button-next::after {
+  display: none;
+}
+.swiper-bespoke-2 {
+  width: 100% !important;
+}
+
+.swiper-slide-bespoke-2 {
+  width: 100%;
+  height: auto;
+}
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .swiper-slide-bespoke-2 {
+    margin-bottom: 15px;
+  }
+}
