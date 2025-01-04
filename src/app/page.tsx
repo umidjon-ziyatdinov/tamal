@@ -18,25 +18,32 @@ import SectionGridFeatureItems from "@/components/SectionGridFeatureItems";
 import SectionMagazine5 from "@/app/blog/SectionMagazine5";
 import ManufacturersSlider from "@/shared/ClientSlider/ClientSlider";
 
+import { CATEGORIES } from "./(categoryies)/enhance/data";
+import { FeaturedCategories } from "@/components/FeaturedCategories/FeaturedCategories";
+import NewArrivals from "@/components/NewArrivalSection";
+import { FAKE_PRODUCTS } from "@/data/fakeData";
+
 function PageHome() {
   return (
     <div className="nc-PageHome relative overflow-hidden">
       <SectionHero2 />
-
+      <div className=" flex flex-col space-y-5 mt-12 px-5 lg:mt-32">
+      <Heading
+        className=" text-neutral-900 dark:text-neutral-50 nc-p-r-container "
+        desc=""       
+      >
+    Найдите все, что вам нужно, организованное специально для вас
+      </Heading>
+   
+      <FeaturedCategories />
+      </div>
+ 
       <div className="mt-24 lg:mt-32">
         <DiscoverMoreSlider />
       </div>
 
       <div className="container relative space-y-24 my-24 lg:space-y-32 lg:my-32">
-        <SectionSliderProductCard
-          data={[
-            PRODUCTS[4],
-            SPORT_PRODUCTS[5],
-            PRODUCTS[7],
-            SPORT_PRODUCTS[1],
-            PRODUCTS[6],
-          ]}
-        />
+   <NewArrivals data={FAKE_PRODUCTS.slice(0, 5)} />
 <ManufacturersSlider />
         <div className="py-24 lg:py-32 border-t border-b border-slate-200 dark:border-slate-700">
           <SectionHowItWork />

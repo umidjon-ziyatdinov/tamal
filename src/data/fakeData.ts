@@ -123,612 +123,746 @@ export interface Product {
     updatedAt: string;
 }
 
+
+
+
+
 export const FAKE_PRODUCTS: Product[] = [
     // Строительные материалы -> Цемент
+
     {
-        id: 1,
-        name: "Цемент М400",
-        sku: "CEM400001",
-        brand: "StroyTech",
+        id: 1001,
+        name: "Портландцемент ЦЕМ I 42,5Н",
+        sku: "CEM-42.5N-50",
+        brand: "ЕвроЦемент",
         price: {
-            value: 350,
+            value: 380,
             unit: "bag",
             bulkPrices: [
-                { quantity: 10, price: 330 },
-                { quantity: 50, price: 310 }
+                { quantity: 10, price: 360 },
+                { quantity: 100, price: 340 }
             ]
         },
         stock: {
-            available: 500,
+            available: 1500,
             minOrder: 1,
-            maxOrder: 100,
-            warehouse: "Москва"
+            maxOrder: 300,
+            warehouse: "Москва-Восток",
+            leadTime: "1-2 дня"
         },
         specifications: {
-            material: "Цемент",
-            strength: "М400",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Строительные материалы",
-            sub: "Цемент"
-        },
-        images: {
-            main: "/images/cement_m400.jpg",
-            gallery: ["/images/cement_m400_1.jpg"]
-        },
-        applications: ["Используется для бетонных конструкций", "Для укладки полов"],
-        description: {
-            short: "Цемент марки М400 для строительных работ.",
-            full: "Цемент М400 является одним из самых популярных строительных материалов для создания прочных бетонных конструкций. Идеален для фундамента, полов, стен."
-        },
-        tags: ["Цемент", "Строительство", "Бетон"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Строительные материалы -> Песок
-    {
-        id: 2,
-        name: "Песок строительный, 0-5 мм",
-        sku: "SAND0050002",
-        brand: "TechSand",
-        price: {
-            value: 150,
-            unit: "ton"
-        },
-        stock: {
-            available: 1000,
-            minOrder: 1,
-            maxOrder: 50,
-            warehouse: "Санкт-Петербург"
-        },
-        specifications: {
-            material: "Песок",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Строительные материалы",
-            sub: "Песок"
-        },
-        images: {
-            main: "/images/sand_0-5mm.jpg",
-            gallery: ["/images/sand_0-5mm_1.jpg"]
-        },
-        applications: ["Для бетона", "Для выравнивания поверхностей"],
-        description: {
-            short: "Строительный песок фракции 0-5 мм для различных строительных работ.",
-            full: "Этот песок идеально подходит для создания качественного бетона и выравнивания поверхностей. Применяется в строительных и дорожных работах."
-        },
-        tags: ["Песок", "Строительство", "Бетон"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Строительные материалы -> Щебень
-    {
-        id: 3,
-        name: "Щебень 5-20 мм",
-        sku: "GRAVEL0520003",
-        brand: "StoneTech",
-        price: {
-            value: 500,
-            unit: "ton"
-        },
-        stock: {
-            available: 800,
-            minOrder: 1,
-            maxOrder: 30,
-            warehouse: "Казань"
-        },
-        specifications: {
-            material: "Щебень",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Строительные материалы",
-            sub: "Щебень"
-        },
-        images: {
-            main: "/images/gravel_5-20mm.jpg",
-            gallery: ["/images/gravel_5-20mm_1.jpg"]
-        },
-        applications: ["Для дорожных работ", "Для фундаментов"],
-        description: {
-            short: "Щебень фракции 5-20 мм для строительства и дорожных работ.",
-            full: "Щебень идеально подходит для создания прочных и надежных фундаментов, а также для укладки дорожных покрытий. Хорошо удерживает воду и воздухопроницаем."
-        },
-        tags: ["Щебень", "Строительство", "Дороги"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Строительные материалы -> Кирпич
-    {
-        id: 4,
-        name: "Кирпич красный одинарный",
-        sku: "BRICK001004",
-        brand: "BrickMaster",
-        price: {
-            value: 20,
-            unit: "piece"
-        },
-        stock: {
-            available: 2000,
-            minOrder: 10,
-            maxOrder: 500,
-            warehouse: "Ростов-на-Дону"
-        },
-        specifications: {
-            material: "Глина",
-            strength: "М150",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Строительные материалы",
-            sub: "Кирпич"
-        },
-        images: {
-            main: "/images/brick_red.jpg",
-            gallery: ["/images/brick_red_1.jpg"]
-        },
-        applications: ["Для строительства стен", "Для кладки"],
-        description: {
-            short: "Красный кирпич одинарный для возведения стен.",
-            full: "Кирпич из высококачественной глины, предназначен для строительства стен и наружных конструкций. Идеален для создания прочных и долговечных зданий."
-        },
-        tags: ["Кирпич", "Строительство", "Глина"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Отделочные материалы -> Ламинат
-    {
-        id: 5,
-        name: "Ламинат, Дуб Экспресс",
-        sku: "LAMINATE_EX1235",
-        brand: "HomeFloor",
-        price: {
-            value: 500,
-            unit: "m2"
-        },
-        stock: {
-            available: 150,
-            minOrder: 5,
-            maxOrder: 50,
-            warehouse: "Воронеж"
-        },
-        specifications: {
-            material: "Ламинат",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Отделочные материалы",
-            sub: "Ламинат"
-        },
-        images: {
-            main: "/images/laminate_dub.jpg",
-            gallery: ["/images/laminate_dub_1.jpg"]
-        },
-        applications: ["Для полов в жилых помещениях", "Для офисов"],
-        description: {
-            short: "Ламинат в стиле дуб Экспресс для современных интерьеров.",
-            full: "Этот ламинат с текстурой дуба Экспресс идеально подходит для укладки в любых помещениях. Прост в уходе и монтаже."
-        },
-        tags: ["Ламинат", "Отделка", "Пол"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Отделочные материалы -> Плитка
-    {
-        id: 6,
-        name: "Плитка керамическая, Белый глянец",
-        sku: "TILE_WHITE001",
-        brand: "TileMaster",
-        price: {
-            value: 300,
-            unit: "m2"
-        },
-        stock: {
-            available: 500,
-            minOrder: 1,
-            maxOrder: 100,
-            warehouse: "Калуга"
-        },
-        specifications: {
-            material: "Керамика",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Отделочные материалы",
-            sub: "Плитка"
-        },
-        images: {
-            main: "/images/tile_white.jpg",
-            gallery: ["/images/tile_white_1.jpg"]
-        },
-        applications: ["Для укладки на стены", "Для полов в ванной"],
-        description: {
-            short: "Керамическая плитка белого цвета для стен и пола.",
-            full: "Плитка с глянцевой поверхностью, идеально подходит для укладки в ванных комнатах и кухнях. Легко очищается и обладает высокой износостойкостью."
-        },
-        tags: ["Плитка", "Керамика", "Отделка"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Сантехника -> Унитазы
-    {
-        id: 7,
-        name: "Унитаз с бачком, Белый",
-        sku: "TOILET_WHITE123",
-        brand: "Sanita",
-        price: {
-            value: 2500,
-            unit: "piece"
-        },
-        stock: {
-            available: 100,
-            minOrder: 1,
-            maxOrder: 10,
-            warehouse: "Москва"
-        },
-        specifications: {
-            material: "Фаянс",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Сантехника",
-            sub: "Унитазы"
-        },
-        images: {
-            main: "/images/toilet_white.jpg",
-            gallery: ["/images/toilet_white_1.jpg"]
-        },
-        applications: ["Для установки в ванных комнатах", "Для общественных туалетов"],
-        description: {
-            short: "Унитаз с бачком белого цвета для ванной комнаты.",
-            full: "Эргономичный и современный унитаз с бачком из фаянса. Легко очищается, обладает высокой прочностью и долгим сроком службы."
-        },
-        tags: ["Сантехника", "Унитаз", "Белый"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    // Сантехника -> Раковины
-    {
-        id: 8,
-        name: "Раковина встраиваемая, Белый",
-        sku: "SINK_BUILTIN123",
-        brand: "Sanita",
-        price: {
-            value: 1500,
-            unit: "piece"
-        },
-        stock: {
-            available: 200,
-            minOrder: 1,
-            maxOrder: 10,
-            warehouse: "Самара"
-        },
-        specifications: {
-            material: "Фаянс",
-            countryOfOrigin: "Россия"
-        },
-        category: {
-            main: "Сантехника",
-            sub: "Раковины"
-        },
-        images: {
-            main: "/images/sink_built_in.jpg",
-            gallery: ["/images/sink_built_in_1.jpg"]
-        },
-        applications: ["Для установки в ванную комнату", "Для кухни"],
-        description: {
-            short: "Встраиваемая раковина белого цвета.",
-            full: "Элегантная и удобная встраиваемая раковина, подходящая для любых интерьеров. Простая в установке и уходе."
-        },
-        tags: ["Сантехника", "Раковина", "Белый"],
-        createdAt: "2024-12-26T08:00:00Z",
-        updatedAt: "2024-12-26T08:00:00Z"
-    },
-    {
-        id: 11,
-        name: "Цемент марки M400",
-        sku: "CEM-M400-01",
-        brand: "Holcim",
-        price: {
-            value: 1200,
-            unit: "bag",
-            bulkPrices: [
-                { quantity: 10, price: 1100 },
-                { quantity: 50, price: 1000 },
-            ],
-        },
-        stock: {
-            available: 500,
-            minOrder: 1,
-            maxOrder: 100,
-            warehouse: "Москва",
-        },
-        specifications: {
-            material: "Цемент",
-            strength: "M400",
+            weight: {
+                value: 50,
+                unit: "kg"
+            },
+            material: "Портландцемент",
+            strength: "42,5 МПа",
+            grade: "ЦЕМ I 42,5Н",
+            manufacturer: "ЕвроЦемент Групп",
             countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 31108-2020", "ISO 9001:2015"]
         },
         category: {
             main: "Строительные материалы",
             sub: "Цемент",
+            type: "Портландцемент"
         },
         images: {
-            main: "cement-m400.jpg",
-            gallery: ["cement-m400-1.jpg", "cement-m400-2.jpg"],
+            main: "https://kcsh.by/upload/iblock/eb0/pj95aoevyij6cenouat9jx679s545ffs.jpg",
+            gallery: [
+                "/images/cement-42.5n-1.jpg",
+                "/images/cement-42.5n-2.jpg"
+            ],
+            technical: ["/images/cement-42.5n-spec.jpg"]
         },
+        documents: [
+            {
+                type: "certificate",
+                url: "/docs/cement-42.5n-cert.pdf",
+                name: "Сертификат соответствия"
+            }
+        ],
+        applications: [
+            "Фундаментные работы",
+            "Монолитное строительство",
+            "Производство ЖБИ"
+        ],
+        storage: "Хранить в сухом помещении на поддонах",
+        handling: "Беречь от влаги. Использовать средства защиты при работе",
         description: {
-            short: "Цемент марки M400 для строительных работ.",
-            full: "Цемент марки M400 предназначен для выполнения различных строительных работ, включая армирование и заливку фундамента. Обладает высокой прочностью и устойчивостью к морозам.",
+            short: "Универсальный портландцемент для широкого спектра строительных работ",
+            full: "Высококачественный портландцемент класса прочности 42,5 МПа нормальнотвердеющий. Производится из высококачественного сырья по современной технологии. Обеспечивает высокую прочность и долговечность бетонных конструкций.",
+            technical: "Прочность на сжатие через 28 суток: не менее 42,5 МПа. Начало схватывания: не ранее 60 минут."
         },
-        tags: ["цемент", "строительные материалы", "M400"],
-        createdAt: "2024-12-25T10:00:00Z",
-        updatedAt: "2024-12-25T10:00:00Z",
+        tags: ["цемент", "портландцемент", "стройматериалы", "бетон"],
+        rating: {
+            average: 4.8,
+            count: 245,
+            reviews: [
+                {
+                    author: "Александр В.",
+                    rating: 5,
+                    comment: "Отличный цемент, стабильное качество. Используем постоянно на объектах.",
+                    date: "2024-12-15",
+                    verified: true
+                }
+            ]
+        },
+        status: {
+            inStock: true,
+            isNew: false,
+            onSale: {
+                discountPercent: 5,
+                endDate: "2025-01-15"
+            }
+        },
+        delivery: {
+            methods: [
+                {
+                    type: "pickup",
+                    price: 0,
+                    estimatedDays: 0
+                },
+                {
+                    type: "delivery",
+                    price: 1500,
+                    estimatedDays: 1
+                }
+            ]
+        },
+        createdAt: "2024-01-01T00:00:00Z",
+        updatedAt: "2024-12-28T12:00:00Z"
     },
     {
-        id: 12,
-        name: "Ламинат с текстурой дуба",
-        sku: "LAM-DUB-02",
-        brand: "Kronospan",
+        id: 1002,
+        name: "Песок строительный карьерный",
+        sku: "SAND-02-BULK",
+        brand: "КарьерПром",
         price: {
-            value: 350,
-            unit: "m2",
+            value: 850,
+            unit: "m3",
             bulkPrices: [
-                { quantity: 50, price: 320 },
-                { quantity: 200, price: 290 },
-            ],
+                { quantity: 10, price: 800 },
+                { quantity: 100, price: 750 }
+            ]
+        },
+        stock: {
+            available: 5000,
+            minOrder: 5,
+            maxOrder: 1000,
+            warehouse: "Карьер Подмосковье",
+            leadTime: "2-3 дня"
+        },
+        specifications: {
+            material: "Песок карьерный",
+            grade: "1 класс",
+            manufacturer: "КарьерПром",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 8736-2014"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Песок",
+            type: "Карьерный"
+        },
+        images: {
+            main: "https://bazagbi.ru/wp-content/uploads/2018/03/pesok1.jpg",
+            gallery: ["/images/sand-construction-bulk.jpg"]
+        },
+        description: {
+            short: "Карьерный песок для строительных работ",
+            full: "Крупнозернистый карьерный песок высокого качества. Идеально подходит для производства бетона, строительных растворов и работ по благоустройству.",
+            technical: "Модуль крупности: 2,2-2,5. Содержание пылевидных и глинистых частиц: не более 2%."
+        },
+        tags: ["песок", "карьерный песок", "стройматериалы"],
+        rating: {
+            average: 4.6,
+            count: 128
+        },
+        status: {
+            inStock: true
+        },
+        createdAt: "2024-02-01T00:00:00Z",
+        updatedAt: "2024-12-27T14:30:00Z"
+    },
+    {
+        id: 1003,
+        name: "Щебень гранитный фр. 20-40",
+        sku: "GRAV-20-40",
+        brand: "ГранитПром",
+        price: {
+            value: 1200,
+            unit: "m3",
+            bulkPrices: [
+                { quantity: 10, price: 1150 },
+                { quantity: 50, price: 1100 }
+            ]
+        },
+        stock: {
+            available: 3000,
+            minOrder: 5,
+            maxOrder: 500,
+            warehouse: "Карьер Север",
+            leadTime: "2-3 дня"
+        },
+        specifications: {
+            material: "Гранит",
+            strength: "1200-1400 кг/см²",
+            grade: "1 класс",
+            manufacturer: "ГранитПром",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 8267-93"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Щебень",
+            type: "Гранитный"
+        },
+        images: {
+            main: "https://st12.stpulscen.ru/images/product/433/491/203_big.jpg",
+            gallery: ["/images/granite-gravel-pile.jpg"]
+        },
+        description: {
+            short: "Гранитный щебень фракции 20-40 мм",
+            full: "Высококачественный гранитный щебень для производства бетона и строительных работ. Правильная геометрическая форма зерен, высокая прочность и морозостойкость.",
+            technical: "Марка прочности: 1200-1400. Морозостойкость: F300. Насыпная плотность: 1350 кг/м³."
+        },
+        tags: ["щебень", "гранитный щебень", "стройматериалы"],
+        rating: {
+            average: 4.7,
+            count: 89
+        },
+        status: {
+            inStock: true
+        },
+        createdAt: "2024-03-01T00:00:00Z",
+        updatedAt: "2024-12-26T09:15:00Z"
+    },
+    {
+        id: 1004,
+        name: "Кирпич облицовочный красный",
+        sku: "BRICK-RED-STD",
+        brand: "КирпичСтрой",
+        price: {
+            value: 24,
+            unit: "piece",
+            bulkPrices: [
+                { quantity: 100, price: 23 },
+                { quantity: 1000, price: 22 }
+            ]
+        },
+        stock: {
+            available: 25000,
+            minOrder: 50,
+            maxOrder: 5000,
+            warehouse: "Москва-Юг"
+        },
+        specifications: {
+            dimensions: {
+                length: 250,
+                width: 120,
+                height: 65,
+                unit: "mm"
+            },
+            weight: {
+                value: 2.4,
+                unit: "kg"
+            },
+            material: "Керамика",
+            strength: "М150",
+            manufacturer: "КирпичСтрой",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 530-2012"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Кирпич",
+            type: "Облицовочный"
+        },
+        images: {
+            main: "https://st13.stpulscen.ru/images/product/396/821/315_big.jpg",
+            gallery: [
+                "/images/red-brick-wall.jpg",
+                "/images/red-brick-detail.jpg"
+            ]
+        },
+        description: {
+            short: "Облицовочный керамический кирпич красного цвета",
+            full: "Высококачественный облицовочный кирпич с гладкой поверхностью. Идеально подходит для фасадных работ. Обладает высокой прочностью и морозостойкостью.",
+            technical: "Марка прочности М150, морозостойкость F100, водопоглощение не более 6%."
+        },
+        tags: ["кирпич", "облицовочный кирпич", "стройматериалы"],
+        rating: {
+            average: 4.9,
+            count: 312
+        },
+        status: {
+            inStock: true,
+            isNew: false
+        },
+        createdAt: "2024-04-01T00:00:00Z",
+        updatedAt: "2024-12-25T16:45:00Z"
+    },
+    {
+        id: 1005,
+        name: "Цемент Сульфатостойкий ЦЕМ I 42,5Н СС",
+        sku: "CEM-SUL-42.5",
+        brand: "ЕвроЦемент",
+        price: {
+            value: 420,
+            unit: "bag",
+            bulkPrices: [
+                { quantity: 10, price: 400 },
+                { quantity: 100, price: 380 }
+            ]
+        },
+        stock: {
+            available: 800,
+            minOrder: 1,
+            maxOrder: 200,
+            warehouse: "Москва-Восток",
+            leadTime: "2-3 дня"
+        },
+        specifications: {
+            weight: {
+                value: 50,
+                unit: "kg"
+            },
+            material: "Сульфатостойкий цемент",
+            strength: "42,5 МПа",
+            grade: "ЦЕМ I 42,5Н СС",
+            manufacturer: "ЕвроЦемент Групп",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 22266-2013"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Цемент",
+            type: "Специальный"
+        },
+        images: {
+            main: "https://kcsh.by/upload/iblock/0fb/2u6otn1c6d99estyqb72nwusyijbxhai.png",
+            gallery: ["/images/sulfate-cement-use.jpg"]
+        },
+        description: {
+            short: "Сульфатостойкий цемент для агрессивных сред",
+            full: "Специальный цемент для конструкций, подвергающихся воздействию сульфатной агрессии. Идеален для гидротехнических сооружений и подземных конструкций.",
+            technical: "Сульфатостойкость по ГОСТ 22266-2013. Прочность на сжатие через 28 суток: не менее 42,5 МПа."
+        },
+        tags: ["цемент", "сульфатостойкий", "специальный цемент", "стройматериалы"],
+        rating: {
+            average: 4.7,
+            count: 86
+        },
+        status: {
+            inStock: true,
+            isNew: true
+        },
+        createdAt: "2024-06-01T00:00:00Z",
+        updatedAt: "2024-12-24T11:20:00Z"
+    },
+    {
+        id: 1006,
+        name: "Песок кварцевый фракционированный",
+        sku: "SAND-QUARTZ-01",
+        brand: "КварцПром",
+        price: {
+            value: 1200,
+            unit: "m3",
+            bulkPrices: [
+                { quantity: 5, price: 1150 },
+                { quantity: 20, price: 1100 }
+            ]
+        },
+        stock: {
+            available: 1000,
+            minOrder: 1,
+            maxOrder: 100,
+            warehouse: "Москва-Запад"
+        },
+        specifications: {
+            material: "Кварцевый песок",
+            grade: "Высший",
+            manufacturer: "КварцПром",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 22551-2019"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Песок",
+            type: "Кварцевый"
+        },
+        images: {
+            main: "https://cdn.vseinstrumenti.ru/images/goods/stroitelnye-materialy/tsement-i-nerudnye-materialy/5539837/1000x1000/66741847.jpg",
+            gallery: ["/images/quartz-sand-detail.jpg"]
+        },
+        description: {
+            short: "Мелкофракционированный кварцевый песок",
+            full: "Высококачественный кварцевый песок для специальных строительных растворов и производства сухих смесей. Содержание SiO2 не менее 98%.",
+            technical: "Фракция 0  "
+        },
+        tags: ["цемент", "сульфатостойкий", "специальный цемент", "стройматериалы"],
+        rating: {
+            average: 4.7,
+            count: 86
+        },
+        status: {
+            inStock: true,
+            isNew: true
+        },
+        createdAt: "2024-06-01T00:00:00Z",
+        updatedAt: "2024-12-24T11:20:00Z"
+    },
+    {
+        id: 1007,
+        name: "Щебень известняковый фр. 5-20",
+        sku: "GRAV-LIME-5-20",
+        brand: "КарьерСтрой",
+        price: {
+            value: 950,
+            unit: "m3",
+            bulkPrices: [
+                { quantity: 10, price: 900 },
+                { quantity: 50, price: 850 }
+            ]
+        },
+        stock: {
+            available: 2000,
+            minOrder: 5,
+            maxOrder: 300,
+            warehouse: "Подмосковье-Юг",
+            leadTime: "1-2 дня"
+        },
+        specifications: {
+            material: "Известняк",
+            strength: "400-600 кг/см²",
+            grade: "2 класс",
+            manufacturer: "КарьерСтрой",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 8267-93"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Щебень",
+            type: "Известняковый"
+        },
+        images: {
+            main: "https://i-nerud24.ru/wp-content/uploads/2022/03/shheben-izvestnyakovyj-5-20-600x450.jpg",
+            gallery: ["/images/limestone-gravel-use.jpg"]
+        },
+        description: {
+            short: "Известняковый щебень мелкой фракции",
+            full: "Щебень известняковый для дорожного строительства и производства бетона. Оптимальное соотношение цена/качество для общестроительных работ.",
+            technical: "Марка прочности: М400-600. Морозостойкость: F100. Насыпная плотность: 1250 кг/м³."
+        },
+        tags: ["щебень", "известняковый щебень", "стройматериалы"],
+        rating: {
+            average: 4.5,
+            count: 67
+        },
+        status: {
+            inStock: true
+        },
+        createdAt: "2024-05-15T00:00:00Z",
+        updatedAt: "2024-12-23T10:30:00Z"
+    },
+    {
+        id: 1008,
+        name: "Кирпич полнотелый рядовой М150",
+        sku: "BRICK-SOLID-M150",
+        brand: "КирпичСтрой",
+        price: {
+            value: 19,
+            unit: "piece",
+            bulkPrices: [
+                { quantity: 100, price: 18 },
+                { quantity: 1000, price: 17 }
+            ]
+        },
+        stock: {
+            available: 35000,
+            minOrder: 100,
+            maxOrder: 10000,
+            warehouse: "Москва-Восток"
+        },
+        specifications: {
+            dimensions: {
+                length: 250,
+                width: 120,
+                height: 65,
+                unit: "mm"
+            },
+            weight: {
+                value: 3.2,
+                unit: "kg"
+            },
+            material: "Керамика",
+            strength: "М150",
+            manufacturer: "КирпичСтрой",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 530-2012"]
+        },
+        category: {
+            main: "Строительные материалы",
+            sub: "Кирпич",
+            type: "Рядовой"
+        },
+        images: {
+            main: "https://cs.petrovich.ru/images/94337/original-925x925-fit.jpg",
+            gallery: ["/images/solid-brick-stack.jpg"]
+        },
+        description: {
+            short: "Полнотелый керамический кирпич для несущих стен",
+            full: "Классический полнотелый кирпич для возведения несущих стен и перегородок. Высокая прочность и надежность конструкций.",
+            technical: "Марка прочности М150, морозостойкость F50, водопоглощение не более 8%."
+        },
+        tags: ["кирпич", "полнотелый кирпич", "стройматериалы"],
+        rating: {
+            average: 4.6,
+            count: 183
+        },
+        status: {
+            inStock: true
+        },
+        createdAt: "2024-03-20T00:00:00Z",
+        updatedAt: "2024-12-22T15:40:00Z"
+    },
+    {
+        id: 1009,
+        name: "Цемент Белый ЦЕМ I 52,5Н",
+        sku: "CEM-WHITE-52.5",
+        brand: "ЕвроЦемент",
+        price: {
+            value: 850,
+            unit: "bag",
+            bulkPrices: [
+                { quantity: 10, price: 800 },
+                { quantity: 50, price: 750 }
+            ]
         },
         stock: {
             available: 300,
-            minOrder: 5,
+            minOrder: 1,
             maxOrder: 100,
-            warehouse: "Санкт-Петербург",
+            warehouse: "Москва-Центр",
+            leadTime: "2-3 дня"
         },
         specifications: {
-            material: "Ламинат",
-            grade: "A",
-            countryOfOrigin: "Австрия",
-        },
-        category: {
-            main: "Отделочные материалы",
-            sub: "Ламинат",
-        },
-        images: {
-            main: "laminate-dub.jpg",
-            gallery: ["laminate-dub-1.jpg", "laminate-dub-2.jpg"],
-        },
-        description: {
-            short: "Ламинат с текстурой дуба, идеален для жилых помещений.",
-            full: "Ламинат с текстурой дуба, стойкий к износу и механическим повреждениям. Легко укладывается и подходит для различных типов интерьеров.",
-        },
-        tags: ["ламинат", "дуб", "отделочные материалы"],
-        createdAt: "2024-12-25T11:00:00Z",
-        updatedAt: "2024-12-25T11:00:00Z",
-    },
-    {
-        id: 13,
-        name: "Унитаз с крышкой Soft-Close",
-        sku: "WC-SC-03",
-        brand: "Roca",
-        price: {
-            value: 8500,
-            unit: "piece",
-        },
-        stock: {
-            available: 100,
-            minOrder: 1,
-            maxOrder: 5,
-            warehouse: "Екатеринбург",
-        },
-        specifications: {
-            material: "Фаянс",
-            countryOfOrigin: "Испания",
-            certificates: ["ISO", "GOST"],
-        },
-        category: {
-            main: "Сантехника",
-            sub: "Унитазы",
-        },
-        images: {
-            main: "toilet-soft-close.jpg",
-            gallery: ["toilet-soft-close-1.jpg", "toilet-soft-close-2.jpg"],
-        },
-        description: {
-            short: "Унитаз с крышкой Soft-Close для комфортного использования.",
-            full: "Унитаз с системой Soft-Close, предотвращающей шумное закрытие крышки. Прост в установке и обслуживании, подходит для современных интерьеров.",
-        },
-        tags: ["унитаз", "сантехника", "Soft-Close"],
-        createdAt: "2024-12-25T12:00:00Z",
-        updatedAt: "2024-12-25T12:00:00Z",
-    },
-    {
-        id: 14,
-        name: "Кабель ВВГнг 3x2.5",
-        sku: "CABL-VVG-3X2-04",
-        brand: "Энергомера",
-        price: {
-            value: 120,
-            unit: "meter",
-            bulkPrices: [
-                { quantity: 100, price: 110 },
-                { quantity: 500, price: 100 },
-            ],
-        },
-        stock: {
-            available: 1000,
-            minOrder: 10,
-            maxOrder: 500,
-            warehouse: "Ростов-на-Дону",
-        },
-        specifications: {
-            material: "Медный провод",
-            strength: "0.8 MPa",
+            weight: {
+                value: 50,
+                unit: "kg"
+            },
+            material: "Белый портландцемент",
+            strength: "52,5 МПа",
+            grade: "ЦЕМ I 52,5Н",
+            manufacturer: "ЕвроЦемент Групп",
             countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 965-89"]
         },
         category: {
-            main: "Электротовары",
-            sub: "Кабели",
+            main: "Строительные материалы",
+            sub: "Цемент",
+            type: "Белый"
         },
         images: {
-            main: "cable-vvg.jpg",
-            gallery: ["cable-vvg-1.jpg", "cable-vvg-2.jpg"],
+            main: "https://pkf-m.ru/assets/images/products/403615/cement-holcim-cem-i-52-5n-pcb-1-500-d0-belyj-50kg.jpeg",
+            gallery: [
+                "/images/white-cement-use.jpg",
+                "/images/white-cement-pack.jpg"
+            ]
         },
         description: {
-            short: "Кабель ВВГнг 3x2.5 для проводки в жилых и коммерческих помещениях.",
-            full: "Кабель ВВГнг 3x2.5 с изоляцией для безопасной проводки в помещениях с высокой пожарной безопасностью. Применяется в электрических сетях для передачи энергии.",
+            short: "Белый портландцемент высокой прочности",
+            full: "Белый цемент премиум-класса для декоративных работ и производства архитектурного бетона. Обеспечивает идеально белый цвет и высокую прочность.",
+            technical: "Белизна не менее 85%, прочность на сжатие через 28 суток: не менее 52,5 МПа."
         },
-        tags: ["кабель", "электротовары", "ВВГнг"],
-        createdAt: "2024-12-25T13:00:00Z",
-        updatedAt: "2024-12-25T13:00:00Z",
+        tags: ["цемент", "белый цемент", "декоративный цемент", "стройматериалы"],
+        rating: {
+            average: 4.9,
+            count: 56
+        },
+        status: {
+            inStock: true,
+            isNew: true
+        },
+        createdAt: "2024-11-01T00:00:00Z",
+        updatedAt: "2024-12-21T13:15:00Z"
     },
     {
-        id: 15,
-        name: "Дрель ударная DeWalt",
-        sku: "DRILL-DW-05",
-        brand: "DeWalt",
+        id: 1010,
+        name: "Песок сеяный речной",
+        sku: "SAND-RIVER-01",
+        brand: "РечПром",
         price: {
-            value: 5500,
-            unit: "piece",
-        },
-        stock: {
-            available: 150,
-            minOrder: 1,
-            maxOrder: 5,
-            warehouse: "Тула",
-        },
-        specifications: {
-            material: "Металл",
-            weight: { value: 2.5, unit: "kg" },
-            countryOfOrigin: "США",
-        },
-        category: {
-            main: "Инструменты",
-            sub: "Дрели",
-        },
-        images: {
-            main: "drill-dewalt.jpg",
-            gallery: ["drill-dewalt-1.jpg", "drill-dewalt-2.jpg"],
-        },
-        description: {
-            short: "Ударная дрель DeWalt с мощностью 800 Вт.",
-            full: "Ударная дрель DeWalt с регулируемой скоростью и мощностью 800 Вт, идеальна для бурения в бетоне и металле. Удобная и легкая в эксплуатации.",
-        },
-        tags: ["дрель", "инструменты", "DeWalt"],
-        createdAt: "2024-12-25T14:00:00Z",
-        updatedAt: "2024-12-25T14:00:00Z",
-    },
-    {
-        id: 16,
-        name: "Межкомнатная дверь из МДФ",
-        sku: "DOOR-MDF-07",
-        brand: "Garant",
-        price: {
-            value: 7200,
-            unit: "piece",
-        },
-        stock: {
-            available: 80,
-            minOrder: 1,
-            maxOrder: 3,
-            warehouse: "Казань",
-        },
-        specifications: {
-            material: "МДФ",
-            dimensions: { width: 80, height: 200, unit: "cm" },
-            countryOfOrigin: "Россия",
-        },
-        category: {
-            main: "Двери и окна",
-            sub: "Межкомнатные двери",
-        },
-        images: {
-            main: "door-mdf.jpg",
-            gallery: ["door-mdf-1.jpg", "door-mdf-2.jpg"],
-        },
-        description: {
-            short: "Межкомнатная дверь из МДФ с отделкой под дуб.",
-            full: "Межкомнатная дверь из МДФ с отделкой под дуб. Идеальна для оформления интерьеров в стиле модерн. Простая в установке и долговечная.",
-        },
-        tags: ["двери", "МДФ", "межкомнатные"],
-        createdAt: "2024-12-25T15:00:00Z",
-        updatedAt: "2024-12-25T15:00:00Z",
-    },
-    {
-        id: 17,
-        name: "Гвозди строительные 100 мм",
-        sku: "NAILS-100MM-08",
-        brand: "Incom",
-        price: {
-            value: 300,
-            unit: "kg",
+            value: 1100,
+            unit: "m3",
             bulkPrices: [
-                { quantity: 50, price: 280 },
-                { quantity: 200, price: 250 },
-            ],
+                { quantity: 10, price: 1050 },
+                { quantity: 50, price: 1000 }
+            ]
         },
         stock: {
-            available: 1000,
+            available: 1500,
             minOrder: 5,
-            maxOrder: 100,
-            warehouse: "Новосибирск",
+            maxOrder: 200,
+            warehouse: "Москва-Север",
+            leadTime: "2-3 дня"
         },
         specifications: {
-            material: "Сталь",
-            weight: { value: 1, unit: "kg" },
-            countryOfOrigin: "Китай",
+            material: "Речной песок",
+            grade: "1 класс",
+            manufacturer: "РечПром",
+            countryOfOrigin: "Россия",
+            certificates: ["ГОСТ 8736-2014"]
         },
         category: {
-            main: "Крепеж и метизы",
-            sub: "Гвозди",
+            main: "Строительные материалы",
+            sub: "Песок",
+            type: "Речной"
         },
         images: {
-            main: "nails-100mm.jpg",
-            gallery: ["nails-100mm-1.jpg", "nails-100mm-2.jpg"],
+            main: "https://moscow-beton.ru/upload/iblock/88c/7481w0tv7bzee7i6c9ap96km2wbiestp.jpg",
+            gallery: ["/images/river-sand-detail.jpg"]
         },
         description: {
-            short: "Строительные гвозди 100 мм для крепежа и соединения материалов.",
-            full: "Строительные гвозди длиной 100 мм из прочной стали, подходят для работы с древесиной, гипсокартоном и другими материалами.",
+            short: "Мытый речной песок для строительных работ",
+            full: "Чистый речной песок, прошедший промывку и сортировку. Идеально подходит для производства бетона высокого качества и отделочных работ.",
+            technical: "Модуль крупности: 1,8-2,2. Содержание пылевидных и глинистых частиц: не более 1%."
         },
-        tags: ["гвозди", "крепеж", "метизы"],
-        createdAt: "2024-12-25T16:00:00Z",
-        updatedAt: "2024-12-25T16:00:00Z",
-    },
-    {
-        id: 18,
-        name: "Садовый инвентарь для работы с почвой",
-        sku: "GARDEN-TOOLS-09",
-        brand: "Gardena",
-        price: {
-            value: 500,
-            unit: "piece",
+        tags: ["песок", "речной песок", "мытый песок", "стройматериалы"],
+        rating: {
+            average: 4.8,
+            count: 94
         },
-        stock: {
-            available: 150,
-            minOrder: 1,
-            maxOrder: 10,
-            warehouse: "Пермь",
+        status: {
+            inStock: true
         },
-        specifications: {
-            material: "Металл, Пластик",
-            countryOfOrigin: "Германия",
-        },
-        category: {
-            main: "Сад и огород",
-            sub: "Садовый инвентарь",
-        },
-        images: {
-            main: "garden-tools.jpg",
-            gallery: ["garden-tools-1.jpg", "garden-tools-2.jpg"],
-        },
-        description: {
-            short: "Садовый инвентарь для работы с почвой и посадки растений.",
-            full: "Садовый инвентарь для удобной работы с почвой, включая лопаты, тяпки и другие инструменты для ухода за огородом и садом.",
-        },
-        tags: ["садовый инвентарь", "сад", "огород"],
-        createdAt: "2024-12-25T17:00:00Z",
-        updatedAt: "2024-12-25T17:00:00Z",
+        createdAt: "2024-07-15T00:00:00Z",
+        updatedAt: "2024-12-20T09:45:00Z"
     }
 
-
 ];
+
+
+// export const categories: CategoryType[] = [
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Строительные материалы",
+//         icon: FaHammer,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Цемент" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Песок" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Щебень" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Кирпич" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Отделочные материалы",
+//         icon: FaPaintRoller,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Ламинат" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Плитка" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Обои" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Краска" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Сантехника",
+//         icon: FaToilet,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Унитазы" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Раковины" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Ванны" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Смесители" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Электротовары",
+//         icon: FaPlug,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Кабели" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Розетки" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Выключатели" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Светильники" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Инструменты",
+//         icon: FaWrench,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Дрели" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Перфораторы" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Шуруповерты" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Болгарки" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Двери и окна",
+//         icon: FaDoorOpen,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Межкомнатные двери" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Входные двери" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Окна ПВХ" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Фурнитура" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Крепеж и метизы",
+//         icon: FaScrewdriver,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Гвозди" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Винты" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Болты" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Шурупы" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Сад и огород",
+//         icon: FaLeaf,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Садовый инвентарь" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Семена" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Удобрения" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Грунт" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Напольные покрытия",
+//         icon: FaSquare,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Ламинат" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Паркет" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Ковролин" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Линолеум" },
+//         ],
+//     },
+//     {
+//         id: ncNanoId(),
+//         href: "/collection" as Route,
+//         name: "Кухни",
+//         icon: FaKitchenSet,
+//         children: [
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Кухонные гарнитуры" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Мойки" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Смесители для кухни" },
+//             { id: ncNanoId(), href: "/collection" as Route, name: "Кухонные аксессуары" },
+//         ],
+//     },
+// ];

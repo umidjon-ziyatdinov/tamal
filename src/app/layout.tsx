@@ -1,5 +1,7 @@
-
+'use client';
 import { Poppins } from "next/font/google";
+import { Provider } from 'react-redux';
+import store from '@/store';
 import "./globals.css";
 import "@/fonts/line-awesome-1.3.0/css/line-awesome.css";
 import "@/styles/index.scss";
@@ -25,11 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.className}>
       <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
+      <Provider store={store}>
         <SiteHeader />
         {children}
         <CommonClient />
         <Footer />
         <BottomNavigation />
+        </Provider>
       </body>
     </html>
   );
