@@ -9,7 +9,7 @@ import ButtonSecondary from "@/shared/Button/ButtonSecondary";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { CartState, setCart } from "@/store/reducers/appReducer";
+
 import { RootState } from "@/store";
 
 export default function CartDropdown() {
