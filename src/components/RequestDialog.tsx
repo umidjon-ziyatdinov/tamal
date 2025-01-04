@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Dialog } from '@headlessui/react';
-import { useForm } from 'react-hook-form';
+import { useForm, FieldError } from 'react-hook-form';
 import { AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 import toast from 'react-hot-toast';
 
@@ -10,14 +10,20 @@ interface RequestDialogProps {
   onClose: () => void;
 }
 
+// Define the form data structure
+interface FormData {
+  name: string;
+  phone: string;
+}
+
 const RequestDialog: React.FC<RequestDialogProps> = ({ isOpen, onClose }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormData) => {
     try {
       const response = await fetch('/api/send-request', {
         method: 'POST',
@@ -63,7 +69,7 @@ const RequestDialog: React.FC<RequestDialogProps> = ({ isOpen, onClose }) => {
               />
             </div>
             {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+              <p className="mt-1 text-sm text-red-600">{errors.name.message as string}</p>
             )}
           </div>
           <div>
@@ -84,7 +90,7 @@ const RequestDialog: React.FC<RequestDialogProps> = ({ isOpen, onClose }) => {
               />
             </div>
             {errors.phone && (
-              <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+              <p className="mt-1 text-sm text-red-600">{errors.phone.message as string}</p>
             )}
           </div>
           <div className="flex justify-end space-x-2">
